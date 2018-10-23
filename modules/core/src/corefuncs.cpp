@@ -2,7 +2,7 @@
 #include <iostream>
 #include "corefuncs.h"
 
-int createModel()
+int createBaseSystem()
 {
     return 1;
 }

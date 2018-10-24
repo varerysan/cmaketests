@@ -9,8 +9,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(mainApp src/app.cpp)
 
-#add_dependencies(mainApp core)
+add_dependencies(mainApp core)
+add_dependencies(mainApp maths)
 
-target_link_libraries(mainApp PRIVATE core)
+target_link_libraries(mainApp PRIVATE core maths)
+#target_link_libraries(mainApp PRIVATE maths)
 target_include_directories(mainApp PRIVATE "..")
 

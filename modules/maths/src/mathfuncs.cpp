@@ -1,8 +1,8 @@
-#include "../include/mathfuncs.h"
-#include "../../core/include/corefunc.h"
+#include "mathfuncs.h"
+#include "core/include/corefuncs.h"
 
 int do_compute(int a)
 {
-    int s = createBaseSystem(a,2);
+    int s = createBaseSystem();
     return s*10;
 }

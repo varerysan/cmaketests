@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 set(PROJECT_NAME_STR maths)
 project(${PROJECT_NAME_STR} CXX)
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/../core/CMakeLists.txt)
+#include(${CMAKE_CURRENT_SOURCE_DIR}/../core/CMakeLists.txt)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -16,6 +16,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(maths src/mathfuncs.cpp)
 target_link_libraries(maths core)
+
+add_dependencies(maths core)
+
+TARGET_INCLUDE_DIRECTORIES(maths PRIVATE "include")
+TARGET_INCLUDE_DIRECTORIES(maths PRIVATE "..")
 
 #add_executable(executeTest main.cpp)
 

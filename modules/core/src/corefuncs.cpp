@@ -7,7 +7,7 @@ int createBaseSystem()
     return 1;
 }
 
-int main()
+int result()
 {
 #ifdef PARAM
     std::cout << "HelloW 1" << std::endl;

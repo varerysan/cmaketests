@@ -3,10 +3,10 @@ Tests with various settings of CMake.
 Some test using ideas from "Modern CMake for modular design" by Mathieu Ropert
 
 ToDo
-Install GTest for Windows
-Test creating dll for Windows
-Test static and dynamic libraries
-Add Param to turn off creating tests.
+1. Install GTest for Windows
+1. Test creating dll for Windows
+1. Test static and dynamic libraries
+1. Add Param to turn off creating tests.
 
 =========================
 

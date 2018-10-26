@@ -3,7 +3,7 @@
 #include "maths/include/mathfuncs.h"
 int main()
 {
-    std::cout << "Main application v2" << std::endl;
+    std::cout << "Main application v3" << std::endl;
 
     int c = createBaseSystem();
     std::cout << "After call createBaseSystem c=" << c << std::endl;

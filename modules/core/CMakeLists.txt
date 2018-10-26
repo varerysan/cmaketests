@@ -18,4 +18,7 @@ ENDIF()
 
 TARGET_INCLUDE_DIRECTORIES(core PRIVATE "include")
 
+ADD_EXECUTABLE(coretest tests/test_main.cpp)
+target_link_libraries(coretest core)
+
 #target_link_libraries(executeTest ${GTEST_LIBRARIES} pthread)

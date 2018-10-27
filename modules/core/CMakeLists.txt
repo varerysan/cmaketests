@@ -5,11 +5,45 @@ project(${PROJECT_NAME_STR} CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+#message("2e32e233e2")
+#message(${CMAKE_LIBRARY_PATH} )
+
+message("---------------- info ----------------")
+set(GTEST_BASE_PATH c:/cpplibraries/gtest)
+message(${GTEST_BASE_PATH})
+
+set(GTEST_BASE_LIB "${GTEST_BASE_PATH}/lib")
+message(${GTEST_BASE_LIB})
+
+set(GTEST_BASE_INCLUDE "${GTEST_BASE_PATH}/include")
+message(${GTEST_BASE_INCLUDE})
+
+if("${CMAKE_SIZEOF_VOID_P}" EQUAL "8")
+    message("========== 64 bit ===========")
+else()
+    message("========== 32 bit ===========")
+endif()
+
+
+
+message("--------------------------------------")
+
+message( SEND_ERROR "You can't do that" )
+
+
+# if(MSVC)
+#     message("------- This is not MSVC -----")
+# #    set (GTEST_LIBRARY C:/Mosyagin/Projects/googletests/_build/googlemock/Release/gmock.lib )
+# #    set (GTEST_MAIN_LIBRARY C:/Mosyagin/Projects/googletests/_build/googlemock/Release/gmock_main.lib )
+# #    set (GTEST_INCLUDE_DIR C:/Mosyagin/Projects/googletests/googletest-release-1.8.1/googletest/include/  )
+# endif()
+
+
 if(MSVC)
     message("------- This is not MSVC -----")
-    set (GTEST_LIBRARY C:/Mosyagin/Projects/googletests/_build/googlemock/Release/gmock.lib )
-    set (GTEST_MAIN_LIBRARY C:/Mosyagin/Projects/googletests/_build/googlemock/Release/gmock_main.lib )
-    set (GTEST_INCLUDE_DIR C:/Mosyagin/Projects/googletests/googletest-release-1.8.1/googletest/include/  )
+    set (GTEST_LIBRARY C:/cpplibraries/gtest/lib/gmock.lib )
+    set (GTEST_MAIN_LIBRARY C:/cpplibraries/gtest/lib/gmock_main.lib )
+    set (GTEST_INCLUDE_DIR  C:/cpplibraries/gtest/include/  )
 endif()
 
 

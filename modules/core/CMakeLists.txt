@@ -5,7 +5,14 @@ project(${PROJECT_NAME_STR} CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-#message("2e32e233e2")
+message("CMAKE_MODULE_PATH---=${CMAKE_MODULE_PATH}=-------------")
+
+
+#message( SEND_ERROR "Stop" )
+
+
+#enable_testing()
+
 #message(${CMAKE_LIBRARY_PATH} )
 
 message("---------------- info ----------------")
@@ -20,15 +27,18 @@ message(${GTEST_BASE_INCLUDE})
 
 if("${CMAKE_SIZEOF_VOID_P}" EQUAL "8")
     message("========== 64 bit ===========")
+    set(GTEST_WORK_LIB "${GTEST_BASE_LIB}/x64")
 else()
     message("========== 32 bit ===========")
+    set(GTEST_WORK_LIB "${GTEST_BASE_LIB}/x86")
 endif()
 
+message("GTEST_WORK_LIB=${GTEST_WORK_LIB}=")
 
 
 message("--------------------------------------")
 
-message( SEND_ERROR "You can't do that" )
+#===message( SEND_ERROR "You can't do that" )
 
 
 # if(MSVC)
@@ -38,12 +48,13 @@ message( SEND_ERROR "You can't do that" )
 # #    set (GTEST_INCLUDE_DIR C:/Mosyagin/Projects/googletests/googletest-release-1.8.1/googletest/include/  )
 # endif()
 
+message("GTEST_LIBRARY-=${GTEST_LIBRARY}=-------------------")
 
 if(MSVC)
     message("------- This is not MSVC -----")
-    set (GTEST_LIBRARY C:/cpplibraries/gtest/lib/gmock.lib )
-    set (GTEST_MAIN_LIBRARY C:/cpplibraries/gtest/lib/gmock_main.lib )
-    set (GTEST_INCLUDE_DIR  C:/cpplibraries/gtest/include/  )
+    set (GTEST_LIBRARY ${GTEST_WORK_LIB}/gmock.lib )
+    set (GTEST_MAIN_LIBRARY ${GTEST_WORK_LIB}/gmock_main.lib )
+    set (GTEST_INCLUDE_DIR  ${GTEST_BASE_INCLUDE} )
 endif()
 
 

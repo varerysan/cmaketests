@@ -25,6 +25,7 @@ TEST(Simple_test_fail2, test_sum)
 
 int main(int argc, char *argv[])
 {
+    std::cout << "Pointer size=" << sizeof(int*) << std::endl;
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 //    std::cout << "Hello world" << std::endl;

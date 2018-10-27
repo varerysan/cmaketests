@@ -5,9 +5,13 @@ project(${PROJECT_NAME_STR} CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set (GTEST_LIBRARY C:/Mosyagin/Projects/googletests/_build/googlemock/Release/gmock.lib )
-set (GTEST_MAIN_LIBRARY C:/Mosyagin/Projects/googletests/_build/googlemock/Release/gmock_main.lib )
-set (GTEST_INCLUDE_DIR C:/Mosyagin/Projects/googletests/googletest-release-1.8.1/googletest/include/  )
+if(MSVC)
+    message("------- This is not MSVC -----")
+    set (GTEST_LIBRARY C:/Mosyagin/Projects/googletests/_build/googlemock/Release/gmock.lib )
+    set (GTEST_MAIN_LIBRARY C:/Mosyagin/Projects/googletests/_build/googlemock/Release/gmock_main.lib )
+    set (GTEST_INCLUDE_DIR C:/Mosyagin/Projects/googletests/googletest-release-1.8.1/googletest/include/  )
+endif()
+
 
 find_package(GTest REQUIRED)
 find_package(Threads REQUIRED)

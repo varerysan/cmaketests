@@ -52,10 +52,27 @@ message("GTEST_LIBRARY-=${GTEST_LIBRARY}=-------------------")
 
 if(MSVC)
     message("------- This is not MSVC -----")
-    set (GTEST_LIBRARY ${GTEST_WORK_LIB}/gmockd.lib )
-    set (GTEST_MAIN_LIBRARY ${GTEST_WORK_LIB}/gmock_maind.lib )
+    
+    if(DEBUG)
+        add_definitions(-DDEBUG)
+        set (GTEST_LIBRARY ${GTEST_WORK_LIB}/gmockd.lib )
+        set (GTEST_MAIN_LIBRARY ${GTEST_WORK_LIB}/gmock_maind.lib )
+    endif()
+
+    if(RELEASE)
+        add_definitions(-DRELEASE)
+        set (GTEST_LIBRARY ${GTEST_WORK_LIB}/gmock.lib )
+        set (GTEST_MAIN_LIBRARY ${GTEST_WORK_LIB}/gmock_main.lib )
+    endif()
+        
     set (GTEST_INCLUDE_DIR  ${GTEST_BASE_INCLUDE} )
+
+
 endif()
+
+#    set (GTEST_LIBRARY ${GTEST_WORK_LIB}/gmockd.lib )
+#    set (GTEST_MAIN_LIBRARY ${GTEST_WORK_LIB}/gmock_maind.lib )
+#    set (GTEST_INCLUDE_DIR  ${GTEST_BASE_INCLUDE} )
 
 
 find_package(GTest REQUIRED)
@@ -92,6 +109,16 @@ if(MSVC)
     message("This is Visual Studio. Enable MT flag")
     SET(CMAKE_CXX_FLAGS_RELEASE "/MT")
     SET(CMAKE_CXX_FLAGS_DEBUG "/MTd")
+
+#    if(DEBUG)
+#        add_definitions(-DDEBUG)
+#    endif()
+
+#    if(RELEASE)
+#        add_definitions(-DRELEASE)
+#    endif()
+        
+
 else()
     message("This is not Visual Studio.")
 endif()

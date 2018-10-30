@@ -6,7 +6,8 @@ set(PROJECT_NAME_STR main)
 #  Could NOT find GTest (missing: GTEST_LIBRARY GTEST_INCLUDE_DIR
 #  GTEST_MAIN_LIBRARY)
 
-
+#add_subdirectory(googletest)
 add_subdirectory(core)
+
 add_subdirectory(maths)
 add_subdirectory(app)

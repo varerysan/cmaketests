@@ -1,0 +1,7 @@
+if(MSVC)
+    message("This is Visual Studio. Enable MT flag")
+    SET(CMAKE_CXX_FLAGS_RELEASE "/MT")
+    SET(CMAKE_CXX_FLAGS_DEBUG "/MTd")
+else()
+    message("This is not Visual Studio.")
+endif()

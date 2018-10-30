@@ -15,3 +15,5 @@ target_link_libraries(maths core)
 
 TARGET_INCLUDE_DIRECTORIES(maths PRIVATE "include")
 TARGET_INCLUDE_DIRECTORIES(maths PRIVATE "..")
+
+include(../cmake_specific.txt)

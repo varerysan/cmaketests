@@ -22,6 +22,12 @@ TEST(Simple_test_fail2, test_sum)
     ASSERT_EQ(1, createBaseSystem());
 }
 
+int main_b()
+{
+    std::cout << "Hello from tests" << std::endl;
+
+    return 0;
+}
 
 int main(int argc, char *argv[])
 {

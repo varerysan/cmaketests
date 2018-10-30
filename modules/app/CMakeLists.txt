@@ -15,3 +15,5 @@ add_executable(mainApp src/app.cpp)
 target_link_libraries(mainApp PRIVATE core maths)
 target_include_directories(mainApp PRIVATE "..")
 
+include(../cmake_specific.txt)
+
